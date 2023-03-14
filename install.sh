@@ -5,7 +5,7 @@ sudo mkdir -p /opt/riscv/
 sudo chmod 777 /opt/riscv/ -R
 
 #install zeqhyr dependencies
-sudo apt install --no-install-recommends git cmake ninja-build gperf \
+sudo apt-get -y install --no-install-recommends git cmake ninja-build gperf \
     ccache dfu-util device-tree-compiler wget \
     python3-dev python3-pip python3-setuptools python3-tk python3-wheel xz-utils file \
     make gcc gcc-multilib g++-multilib libsdl2-dev libmagic1  python3-venv \
@@ -52,7 +52,7 @@ make exe
 
 echo "export ZEPHYR_TOOLCHAIN_VARIANT=cross-compile" >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "export CROSS_COMPILE=/opt/riscv/bin/riscv64-unknown-elf-">> ~/zephyrproject/zephyr/zephyr-env.sh
-echo "export PATH=/tools/zephyr-sdk-0.15.2/riscv64-zephyr-elf/bin/:\$PATH"  >> ~/zephyrproject/zephyr/zephyr-env.sh
-echo "export PATH=/home/christian/git/2023-aniruddh-rao/Code/neorv32-setups/NEORV32/sw/image_gen/:\$PATH" >> ~/zephyrproject/zephyr/zephyr-env.sh
+echo "export PATH=~/zephyr-sdk-0.15.2/riscv64-zephyr-elf/bin/:\$PATH"  >> ~/zephyrproject/zephyr/zephyr-env.sh
+echo "export PATH=$ACTDIR/neorv32-setups/NEORV32/sw/image_gen/:\$PATH" >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "cmake -P \$ZEPHYR_BASE/share/zephyr-package/cmake/zephyr_export.cmake" >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "source activate" " >> ~/zephyrproject/zephyr/zephyr-env.sh
