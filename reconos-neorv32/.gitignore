@@ -1,0 +1,16 @@
+#python generated files
+*pycache*
+
+#build files
+*.hw
+*.sw
+*.log
+
+#bin files
+*.bin
+
+#Vivado project related files
+create_project.tcl
+work
+*.Xil
+*.str

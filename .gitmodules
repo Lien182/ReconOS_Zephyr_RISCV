@@ -1,0 +1,6 @@
+[submodule "zephyr"]
+	path = zephyr
+	url = https://github.com/zephyrproject-rtos/zephyr
+[submodule "riscv-gnu-toolchain"]
+	path = riscv-gnu-toolchain
+	url = https://github.com/riscv-collab/riscv-gnu-toolchain.git

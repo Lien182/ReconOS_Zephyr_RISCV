@@ -1,0 +1,39 @@
+/*
+Project : blinky
+File : app.overlay
+Description : Overlay file for the neorv32 to include reconos units and to
+configure random number generator.
+interrupt-parent = <&firq>;
+        interrupts = <8 0>;
+*/
+
+&{/soc} {
+    reconos_osif: reconos_osif@875a0000 {
+            compatible = "reconos-osif-3.1";
+            reg = <0x875a0000 0x10000>;
+    };
+    reconos_osif_intc: reconos_osif_intc@87b40000 {
+        compatible = "reconos-osif-intc-3.1";
+        reg = <0x87b40000 0x10000>;
+        interrupts = <8>;
+        interrupt-names = "osif_intc";
+    };
+    reconos_proc_control: reconos_proc_control@86fe0000 {
+        compatible = "reconos-control-3.1";
+        reg = <0x86fe0000 0x10000>;
+        interrupts = <8>;
+        interrupt-names = "proc_intc";
+    };
+};
+
+/*&trng {
+    status = "okay";
+};*/
+
+&dmem {
+    reg = <0x80000000 DT_SIZE_K(512)>;
+};
+
+&imem {
+    reg = <0x00000000 DT_SIZE_K(512)>;
+};
