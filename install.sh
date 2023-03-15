@@ -54,7 +54,7 @@ make exe
 ##
 
 echo "export ZEPHYR_TOOLCHAIN_VARIANT=cross-compile" >> ~/zephyrproject/zephyr/zephyr-env.sh
-echo "export CROSS_COMPILE=/opt/riscv/bin/riscv64-unknown-elf-" >> ~/zephyrproject/zephyr/zephyr-env.sh
+echo "export CROSS_COMPILE=/opt/riscv/bin/riscv32-unknown-elf-" >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "export PATH=~/zephyr-sdk-0.15.2/riscv64-zephyr-elf/bin/:\$PATH"  >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "export PATH=$ACTDIR/neorv32-setups/NEORV32/sw/image_gen/:\$PATH" >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "cmake -P \$ZEPHYR_BASE/share/zephyr-package/cmake/zephyr_export.cmake" >> ~/zephyrproject/zephyr/zephyr-env.sh
