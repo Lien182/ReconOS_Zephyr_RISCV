@@ -21,16 +21,19 @@ cd riscv-gnu-toolchain
 ./configure --prefix=/opt/riscv --with-arch=rv32gc --with-abi=ilp32d -enable-multilib
 make 
 
+export PATH=$PATH:/opt/riscv/bin
+
 cd ..
 ##
 python3 -m venv ~/zephyrproject/.venv
 pip install west
 
-west init ~/zephyrproject
+python3 -m west init ~/zephyrproject
 cd ~/zephyrproject
-west update
-west zephyr-export
+python3 -m west update
+python3 -m west zephyr-export
 pip install -r ~/zephyrproject/zephyr/scripts/requirements.txt
+
 
 
 #Download the zeqhyr sdk
@@ -51,8 +54,8 @@ make exe
 ##
 
 echo "export ZEPHYR_TOOLCHAIN_VARIANT=cross-compile" >> ~/zephyrproject/zephyr/zephyr-env.sh
-echo "export CROSS_COMPILE=/opt/riscv/bin/riscv64-unknown-elf-">> ~/zephyrproject/zephyr/zephyr-env.sh
+echo "export CROSS_COMPILE=/opt/riscv/bin/riscv64-unknown-elf-" >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "export PATH=~/zephyr-sdk-0.15.2/riscv64-zephyr-elf/bin/:\$PATH"  >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "export PATH=$ACTDIR/neorv32-setups/NEORV32/sw/image_gen/:\$PATH" >> ~/zephyrproject/zephyr/zephyr-env.sh
 echo "cmake -P \$ZEPHYR_BASE/share/zephyr-package/cmake/zephyr_export.cmake" >> ~/zephyrproject/zephyr/zephyr-env.sh
-echo "source activate" " >> ~/zephyrproject/zephyr/zephyr-env.sh
+echo "source activate" >> ~/zephyrproject/zephyr/zephyr-env.sh

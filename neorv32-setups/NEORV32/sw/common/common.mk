@@ -49,7 +49,7 @@ ASM_INC ?= -I .
 EFFORT ?= -Os
 
 # Compiler toolchain
-RISCV_PREFIX ?= riscv64-unknown-elf-
+RISCV_PREFIX ?= riscv32-unknown-elf-
 
 # CPU architecture and ABI
 MARCH ?= rv32i
