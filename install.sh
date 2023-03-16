@@ -19,6 +19,7 @@ git submodule update --init --recursive
 # install riscv toolchain
 cd riscv-gnu-toolchain
 ./configure --prefix=/opt/riscv --with-arch=rv32gc --with-abi=ilp32d -enable-multilib
+sed -i -e 's/--enable-newlib-io-long-double/--enable-newlib-io-long-double --enable-newlib-retargetable-locking/g' Makefile
 make 
 
 export PATH=$PATH:/opt/riscv/bin
