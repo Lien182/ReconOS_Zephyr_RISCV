@@ -18,6 +18,17 @@
     source settings.sh
     ```
 
-3. Export and build the demos (or your own project)  
+3. Export and build the demos (or your own project):
     a. *./reconos-neorv32/demos/sort_demo_zephyr*  
     b. *./reconos-neorv32/demos/matrixmul_zephyr*  
+    
+    
+### Software
+    ```sh
+    rdk export_sw && rdk build_sw
+    ```
+    
+### Hardware
+    ```sh
+    rdk export_hw && rdk build_hw
+    ```
