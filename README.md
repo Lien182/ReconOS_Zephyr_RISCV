@@ -1,34 +1,29 @@
 # Steps to build a Zephyr based ReconOS design 
 
 ## Installation
-1. Run 
-    ```sh
-    bash install.sh
-    ```
+
+Just run the install script.
+
+```sh
+bash install.sh
+```
 
 ## Building a Zephyr-ReconOS project
 
-2. Run 
-    ```sh
-    source ~/zephyrproject/.venv/bin/activate
-    ```
-
-2. Run 
-    ```sh
-    source settings.sh
-    ```
-
-3. Export and build the demos (or your own project):
-    a. *./reconos-neorv32/demos/sort_demo_zephyr*  
-    b. *./reconos-neorv32/demos/matrixmul_zephyr*  
-    
+First, initialize the workspace with 
+```sh
+source ~/zephyrproject/.venv/bin/activate && source settings.sh
+```
+After that, you can export and build the demos (e.g., sort_demo_zephyr) or your own project:    
     
 ### Software
-    ```sh
-    rdk export_sw && rdk build_sw
-    ```
+
+```sh
+rdk export_sw && rdk build_sw
+```
     
 ### Hardware
-    ```sh
-    rdk export_hw && rdk build_hw
-    ```
+
+```sh
+rdk export_hw && rdk build_hw
+```
